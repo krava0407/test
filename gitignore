@@ -4,3 +4,4 @@ venv
 **/*sandbox.py
 *.DS_Store
 *.pyc
+*.exe
