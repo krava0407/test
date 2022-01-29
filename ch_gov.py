@@ -73,7 +73,7 @@ class Constructor:
         self.driver.find_element(By.XPATH, "//a[contains(text(),'422-000001328')]").click()
         time.sleep(5)
 
-
+#this str need del after test git
 
 
 
