@@ -22,7 +22,7 @@ class Constructor:
         agency = self.driver.find_element(By.XPATH, "//div[@id='agency-tiles-widget']").text
         agency = agency.replace('view', '').replace('Total', '').replace('FY2021', '').replace('Spending', '').replace(':', '')
         agency = agency.replace('   ', '').replace('  ', '')
-        new_agency = list(re.split('\n', agency))      #str to list
+        new_agency = list(re.split('\n', agency))      #str to list  for work dataFrame
         agency_list = [x for x in new_agency if x]     #del elements = ''
         df = pd.DataFrame(agency_list)
         df.to_excel('agency.xlsx', sheet_name='agency')
@@ -35,7 +35,7 @@ class Constructor:
     def show_all(self):
         self.driver.find_element(By.XPATH, "//select[@name='investments-table-object_length']").click()
         time.sleep(5)
-        self.driver.find_element(By.XPATH, "//body/main[@id='main-content']/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/label[1]/select[1]/option[4]").click()
+        self.driver.find_element(By.XPATH, "//select[@name='investments-table-object_length']/child::option[text()='All']").click()
         time.sleep(5)
 
     def print_individ_invest(self):
