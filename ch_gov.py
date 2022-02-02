@@ -5,7 +5,6 @@ from driver import Driver
 import pandas as pd
 
 
-
 class Constructor:
 
     driver = Driver.get_instance()
@@ -74,20 +73,6 @@ class Constructor:
         time.sleep(5)
 
 #this str need del after test git
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     def quit(self):
         self.driver.quit()
